@@ -1,0 +1,89 @@
+s = '''HOOD
+DIDI
+DLO
+YMM
+DOCS
+MNDY
+S
+CFLT
+BZ
+MQ
+GXO
+RYAN
+STVN
+LZ
+AMBP
+CNM
+PYCR
+BHG
+VSCO
+MCW
+LFST
+DDL
+PWSC
+TASK
+VTEX
+DUOL
+EVCM
+DTM
+CXM
+RSKD
+YOU
+LYEL
+FA
+BLND
+HEPS
+VERV
+INST
+IAS
+ADGI
+CTKB
+LAW
+XMTR
+COOK
+CURV
+DNUT
+ERAS
+ATAI
+NABL
+INTA
+MCG
+WKME
+MLNK
+RERE
+BASE
+ABSI
+STAR          
+GLUE
+TBLA
+BAMR
+SGHT
+KLTR
+TRMR
+CRBU
+SNPO
+BALT
+DOLE
+NUVL
+ICVX
+MXCT
+NE
+IPSC
+FXLV
+ZETA
+JANX
+SAND          
+MF
+GRPH
+SOPH
+GHRS'''
+s = list(map(str.strip, s.split('\n')))
+r = ''
+with open('stock_lst.txt', 'r') as f:
+    for i in f.read().strip().split('\n'):
+        if i.split('\t')[0] in s:
+            pass
+        else:
+            r += f'{i}\n'
+with open('stock_lst2.txt', 'w') as f:
+    f.write(r)
