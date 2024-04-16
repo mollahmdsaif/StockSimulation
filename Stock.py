@@ -1,5 +1,7 @@
+import os
 from datetime import datetime as dt, timezone
 import json
+
 from pandas import read_csv as read_csv
 
 
@@ -33,6 +35,10 @@ class Stock:
                 mar_cap = float(opening) * float(self.volume)
                 mul = float(high) / float(data[i - 1][3])
             self.data_dict[date] = (mul, mar_cap)
+        
+        if not os.path.exists('cache'):
+            os.mkdir('cache')
+            
         with open(cache_file_name, 'w') as f:
             f.write(json.dumps(self.data_dict, indent=4))
 
